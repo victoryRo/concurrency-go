@@ -1,5 +1,7 @@
 package main
 
+import "github.com/victoryRo/concurrency-go/chapter4/prosumer"
+
 func main() {
 	// chapter1.ExecuteOne()
 	// fmt.Println("-----------------------")
@@ -9,4 +11,5 @@ func main() {
 	// condition.Localmain()
 	// workers.Localmain()
 	// signal.Localmain()
+	prosumer.LocalMain()
 }
