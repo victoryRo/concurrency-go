@@ -1,6 +1,8 @@
 package main
 
-import "github.com/victoryRo/concurrency-go/chapter4/prosumer"
+import (
+	"github.com/victoryRo/concurrency-go/chapter4/philosopher/chann"
+)
 
 func main() {
 	// chapter1.ExecuteOne()
@@ -11,5 +13,8 @@ func main() {
 	// condition.Localmain()
 	// workers.Localmain()
 	// signal.Localmain()
-	prosumer.LocalMain()
+	// prosumer.LocalMain()
+	// mutex.LocalMain()
+	// ordered.Localmain()
+	chann.Localmain()
 }
