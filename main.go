@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/victoryRo/concurrency-go/chapter4/philosopher/chann"
+	"github.com/victoryRo/concurrency-go/chapter4/rate-limiter/simple"
 )
 
 func main() {
@@ -16,5 +16,7 @@ func main() {
 	// prosumer.LocalMain()
 	// mutex.LocalMain()
 	// ordered.Localmain()
-	chann.Localmain()
+	// chann.Localmain()
+	// chanel.LocalMain() //no results
+	simple.Localmain()
 }
