@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/victoryRo/concurrency-go/chapter4/rate-limiter/simple"
+	wptwo "github.com/victoryRo/concurrency-go/chapter5/workerpool/wpTwo"
 )
 
 func main() {
@@ -18,5 +18,7 @@ func main() {
 	// ordered.Localmain()
 	// chann.Localmain()
 	// chanel.LocalMain() //no results
-	simple.Localmain()
+	// simple.Localmain()
+	// wpone.LocalMain()
+	wptwo.LocalMain()
 }
