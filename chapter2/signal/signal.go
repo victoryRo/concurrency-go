@@ -37,7 +37,7 @@ func Localmain() {
 				fmt.Println("Terminating...")
 				return
 			case <-tick.C:
-				fmt.Println("Tick...")
+				fmt.Println("Tick...", time.Now().Format(time.UnixDate))
 			}
 		}
 	}()
