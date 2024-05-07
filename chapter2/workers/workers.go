@@ -15,13 +15,12 @@ type Result struct {
 
 func Localmain() {
 	done := make(chan bool)
-
 	workCh := make(chan Work)
 	resultCh := make(chan Result)
 
 	workQueue := make([]Work, 100)
 	for i := range workQueue {
-		workQueue[i].value = rand.Int()
+		workQueue[i].value = rand.Intn(1000)
 	}
 
 	// Create 10 worker goroutines
