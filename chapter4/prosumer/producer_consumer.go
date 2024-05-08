@@ -11,7 +11,7 @@ func producer(index int, wg *sync.WaitGroup, done <-chan struct{}, output chan<-
 	defer wg.Done()
 
 	for {
-		value := rand.Int()
+		value := rand.Intn(1000)
 		time.Sleep(time.Millisecond * time.Duration(rand.Intn(1000)))
 
 		select {
@@ -32,24 +32,25 @@ func consumer(index int, wg *sync.WaitGroup, input <-chan int) {
 }
 
 func LocalMain() {
+	numRutines := 3
 	doneCh := make(chan struct{})
 	dataCh := make(chan int)
 
 	producers := sync.WaitGroup{}
 	consumers := sync.WaitGroup{}
 
-	for i := 0; i < 10; i++ {
+	for i := 0; i < numRutines; i++ {
 		producers.Add(1)
 		go producer(i, &producers, doneCh, dataCh)
 	}
 
-	for i := 0; i < 10; i++ {
+	for i := 0; i < numRutines; i++ {
 		consumers.Add(1)
 		go consumer(i, &consumers, dataCh)
 	}
 
 	// select {}
-	time.Sleep(time.Second * 2)
+	time.Sleep(time.Second * 1)
 	close(doneCh)
 	producers.Wait()
 	close(dataCh)
