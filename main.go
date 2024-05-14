@@ -1,5 +1,5 @@
 package main
 
 func main() {
-	// pending chapter 5
+	// chapter 6 pending
 }
