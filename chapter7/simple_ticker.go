@@ -9,6 +9,7 @@ func MainSimpleTicker() {
 	start := time.Now()
 	ticker := time.NewTicker(100 * time.Millisecond)
 	defer ticker.Stop()
+
 	done := time.After(2 * time.Second)
 
 	for {

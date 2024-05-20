@@ -16,6 +16,10 @@ func longRunningProcess(heartbeat, done chan struct{}) {
 		case <-done:
 			return
 		case heartbeat <- struct{}{}:
+		default:
+			// This select statement can have a
+			// default case for
+			// non-blocking operation
 		}
 	}
 }
@@ -34,7 +38,7 @@ func monitor(heartbeat, done chan struct{}, tick <-chan time.Time) {
 		case <-tick:
 			numTicks++
 			if numTicks >= 2 {
-				fmt.Printf("No progress since %s, terminating\n", lastHeartbeat)
+				fmt.Printf("NO PROGRESS SINCE %s, Terminating\n", lastHeartbeat)
 				close(done)
 				return
 			} else {

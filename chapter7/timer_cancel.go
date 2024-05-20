@@ -6,13 +6,18 @@ import (
 )
 
 func MainTimerCancel() {
-	timer := time.NewTimer(100 * time.Millisecond)
+	// timer := time.NewTimer(100 * time.Millisecond)
 	timeout := make(chan struct{})
 
 	go func() {
-		<-timer.C
-		close(timeout)
-		fmt.Println("Timeout")
+		// <-timer.C
+		// close(timeout)
+		// fmt.Println("Timeout")
+		// ----------------------
+		time.AfterFunc(200*time.Millisecond, func() {
+			close(timeout)
+			fmt.Println("TIMEOUT")
+		})
 	}()
 
 	x := 0
