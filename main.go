@@ -1,5 +1,7 @@
 package main
 
+import "github.com/victoryRo/concurrency-go/chapter8/server"
+
 func main() {
 	// chapter7.ExecuteNewTimer()
 	// chapter7.MainTimerCancel()
@@ -9,4 +11,5 @@ func main() {
 	// contexto.LocalContext1()
 	// contexto.LocalContext2()
 	// contexto.LocalContextValue()
+	server.LocalMainTCP()
 }
